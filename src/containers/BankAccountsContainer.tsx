@@ -21,6 +21,13 @@ const useStyles = makeStyles((theme) => ({
     overflow: "auto",
     flexDirection: "column",
   },
+  typoComponent: {
+    color: "teal",
+  },
+  createButtton: {
+    backgroundColor: "orange",
+    color: "white",
+  },
 }));
 
 const BankAccountsContainer: React.FC<Props> = ({ authService, bankAccountsService }) => {
@@ -58,14 +65,14 @@ const BankAccountsContainer: React.FC<Props> = ({ authService, bankAccountsServi
     <Paper className={classes.paper}>
       <Grid container direction="row" justify="space-between" alignItems="center">
         <Grid item>
-          <Typography component="h2" variant="h6" color="primary" gutterBottom>
+          <Typography component="h2" variant="h6" className={classes.typoComponent} gutterBottom>
             Bank Accounts
           </Typography>
         </Grid>
         <Grid item>
           <Button
             variant="contained"
-            color="primary"
+            className={classes.createButtton}
             size="large"
             component={RouterLink}
             to="/bankaccounts/new"

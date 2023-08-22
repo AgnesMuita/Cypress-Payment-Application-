@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
       bottom: 0,
     },
   },
+  outlineColor: {
+    color: "orange",
+  },
 }));
 
 const TransactionListDateRangeFilter: React.FC<TransactionListDateRangeFilterProps> = ({
@@ -83,8 +86,8 @@ const TransactionListDateRangeFilter: React.FC<TransactionListDateRangeFilterPro
     <div>
       {!queryHasDateFields && (
         <Chip
-          color="primary"
           variant="outlined"
+          className={classes.outlineColor}
           onClick={handleDateRangeClick}
           data-test="transaction-list-filter-date-range-button"
           label={"Date: ALL"}

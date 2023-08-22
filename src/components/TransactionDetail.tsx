@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     width: theme.spacing(2),
   },
+  transactiondetail: {
+    color: "orange",
+  },
   headline: {
     marginTop: theme.spacing(4),
   },
@@ -41,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     margin: 10,
   },
   redButton: {
-    backgrounColor: "red",
     color: "#ffffff",
     backgroundColor: "red",
     paddingTop: 5,
@@ -92,7 +94,7 @@ const TransactionDetail: React.FC<TransactionProps> = ({
       <Typography
         component="h2"
         variant="h6"
-        color="primary"
+        className={classes.transactiondetail}
         gutterBottom
         data-test="transaction-detail-header"
       >
@@ -147,7 +149,7 @@ const TransactionDetail: React.FC<TransactionProps> = ({
             </Grid>
             <Grid item>
               <IconButton
-                color="primary"
+                className={classes.transactiondetail}
                 disabled={currentUserLikesTransaction(currentUser, transaction)}
                 onClick={() => transactionLike(transaction.id)}
                 data-test={`transaction-like-button-${transaction.id}`}
