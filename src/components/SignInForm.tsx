@@ -46,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "orange",
+  },
+  signin: {
+    color: "teal",
   },
   alertMessage: {
     marginBottom: theme.spacing(2),
@@ -79,7 +83,7 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
         <div>
           <RWALogo className={classes.logo} />
         </div>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" className={classes.signin}>
           Sign in
         </Typography>
         <Formik
@@ -140,7 +144,6 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                color="primary"
                 className={classes.submit}
                 data-test="signin-submit"
                 disabled={!isValid || isSubmitting}

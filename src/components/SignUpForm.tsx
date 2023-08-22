@@ -48,6 +48,8 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "teal",
+    color: "white",
   },
 }));
 
@@ -179,7 +181,6 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                color="primary"
                 className={classes.submit}
                 data-test="signup-submit"
                 disabled={!isValid || isSubmitting}

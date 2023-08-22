@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     paddingLeft: theme.spacing(1),
   },
+  createTransaction: {
+    backgroundColor: "teal",
+    color: "white",
+  },
 }));
 
 const TransactionList: React.FC<TransactionListProps> = ({
@@ -69,7 +73,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
                 <Button
                   data-test="transaction-list-empty-create-transaction-button"
                   variant="contained"
-                  color="primary"
+                  className={classes.createTransaction}
                   component={RouterLink}
                   to="/transaction/new"
                 >
