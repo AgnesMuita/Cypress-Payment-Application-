@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    backgroundColor: "teal",
   },
   appBarShift: {
     marginLeft: drawerWidth,
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
   newTransactionButton: {
     fontSize: 16,
-    backgroundColor: "#00C853",
+    backgroundColor: "orange",
     paddingTop: 5,
     paddingBottom: 5,
     paddingRight: 20,

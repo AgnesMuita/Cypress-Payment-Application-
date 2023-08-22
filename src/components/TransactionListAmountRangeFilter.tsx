@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
   amountRangeSlider: {
     width: 200,
   },
+  outlineColor: {
+    color: "orange",
+  },
 }));
 
 export type TransactionListAmountRangeFilterProps = {
@@ -133,7 +136,7 @@ const TransactionListAmountRangeFilter: React.FC<TransactionListAmountRangeFilte
   return (
     <div>
       <Chip
-        color="primary"
+        className={classes.outlineColor}
         variant="outlined"
         onClick={handleAmountRangeClick}
         data-test="transaction-list-filter-amount-range-button"

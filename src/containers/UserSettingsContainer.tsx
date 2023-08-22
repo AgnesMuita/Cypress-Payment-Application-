@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: "auto",
     flexDirection: "column",
   },
+  usersettings: {
+    color: "orange",
+  },
 }));
 
 export interface Props {
@@ -28,7 +31,7 @@ const UserSettingsContainer: React.FC<Props> = ({ authService }) => {
 
   return (
     <Paper className={classes.paper}>
-      <Typography component="h2" variant="h6" color="primary" gutterBottom>
+      <Typography component="h2" variant="h6" className={classes.usersettings} gutterBottom>
         User Settings
       </Typography>
       <Grid container spacing={2} direction="row" justify="flex-start" alignItems="flex-start">

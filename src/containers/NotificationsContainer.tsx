@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: "auto",
     flexDirection: "column",
   },
+  notifications: {
+    color: "orange",
+  },
 }));
 
 export interface Props {
@@ -36,7 +39,7 @@ const NotificationsContainer: React.FC<Props> = ({ authService, notificationsSer
 
   return (
     <Paper className={classes.paper}>
-      <Typography component="h2" variant="h6" color="primary" gutterBottom>
+      <Typography component="h2" variant="h6" className={classes.notifications} gutterBottom>
         Notifications
       </Typography>
       <NotificationList
