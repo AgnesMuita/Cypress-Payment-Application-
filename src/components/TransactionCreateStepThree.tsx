@@ -15,6 +15,13 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
+  stepthree: {
+    color: "orange",
+  },
+  submitbuttons: {
+    backgroundColor: "teal",
+    color: "white",
+  },
 }));
 
 export interface TransactionCreateStepThreeProps {
@@ -53,7 +60,7 @@ const TransactionCreateStepThree: React.FC<TransactionCreateStepThreeProps> = ({
                 <Avatar src={receiver.avatar} />
               </Grid>
               <Grid item>
-                <Typography component="h2" variant="h6" color="primary" gutterBottom>
+                <Typography component="h2" variant="h6" className={classes.stepthree} gutterBottom>
                   {receiver.firstName} {receiver.lastName}
                 </Typography>
               </Grid>
@@ -70,7 +77,7 @@ const TransactionCreateStepThree: React.FC<TransactionCreateStepThreeProps> = ({
       >
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item>
-            <Typography component="h2" variant="h6" color="primary" gutterBottom>
+            <Typography component="h2" variant="h6" className={classes.stepthree} gutterBottom>
               {transactionDetails?.transactionType === "payment" ? "Paid " : "Requested "}
               {transactionDetails?.amount &&
                 formatAmount(parseInt(transactionDetails.amount, 10) * 100)}{" "}
@@ -92,6 +99,7 @@ const TransactionCreateStepThree: React.FC<TransactionCreateStepThreeProps> = ({
               variant="contained"
               size="small"
               component={RouterLink}
+              className={classes.submitbuttons}
               to="/"
               data-test="new-transaction-return-to-transactions"
             >
@@ -102,6 +110,7 @@ const TransactionCreateStepThree: React.FC<TransactionCreateStepThreeProps> = ({
             <Button
               variant="contained"
               size="small"
+              className={classes.submitbuttons}
               /* istanbul ignore next */
               onClick={() => {
                 sendCreateTransaction("RESET");

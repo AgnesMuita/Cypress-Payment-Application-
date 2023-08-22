@@ -23,6 +23,9 @@ const validationSchema = object({
 });
 
 const useStyles = makeStyles((theme) => ({
+  username: {
+    color: "orange",
+  },
   paper: {
     //marginTop: theme.spacing(2),
     display: "flex",
@@ -35,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "orange",
   },
 }));
 
@@ -102,7 +106,7 @@ const TransactionCreateStepTwo: React.FC<TransactionCreateStepTwoProps> = ({
             <Avatar src={receiver.avatar} />
           </Grid>
           <Grid item>
-            <Typography component="h2" variant="h6" color="primary" gutterBottom>
+            <Typography component="h2" variant="h6" className={classes.username} gutterBottom>
               {receiver.firstName} {receiver.lastName}
               {transactionType}
             </Typography>
@@ -132,7 +136,6 @@ const TransactionCreateStepTwo: React.FC<TransactionCreateStepTwoProps> = ({
               <Field name="amount">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="dense"
                     fullWidth
                     required
@@ -154,7 +157,6 @@ const TransactionCreateStepTwo: React.FC<TransactionCreateStepTwoProps> = ({
               <Field name="description">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="dense"
                     fullWidth
                     required
@@ -174,7 +176,6 @@ const TransactionCreateStepTwo: React.FC<TransactionCreateStepTwoProps> = ({
                     type="submit"
                     fullWidth
                     variant="contained"
-                    color="primary"
                     className={classes.submit}
                     data-test="transaction-create-submit-request"
                     disabled={!isValid || isSubmitting}
