@@ -6,7 +6,7 @@ function SvgRwaIconLogo(props: any) {
       width="47px"
       height="47px"
       viewBox="0 0 47 47"
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg"
       {...props}
     >
       <path

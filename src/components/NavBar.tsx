@@ -61,13 +61,13 @@ const useStyles = makeStyles((theme) => ({
   },
   newTransactionButton: {
     fontSize: 16,
-    backgroundColor: "orange",
+    backgroundColor: "#F37413",
     paddingTop: 5,
     paddingBottom: 5,
     paddingRight: 20,
     fontWeight: "bold",
     "&:hover": {
-      backgroundColor: "#4CAF50",
+      backgroundColor: "orange",
       borderColor: "#00C853",
       boxShadow: "none",
     },
@@ -114,11 +114,12 @@ const NavBar: React.FC<NavBarProps> = ({ drawerOpen, toggleDrawer, notifications
           data-test="app-name-logo"
         >
           <Link to="/" style={{ color: "#fff", textDecoration: "none" }} component={RouterLink}>
-            {xsBreakpoint ? (
+            Payments Application By C Hash
+            {/* {xsBreakpoint ? (
               <RWALogoIcon className={classes.logo} />
             ) : (
               <RWALogo className={classes.logo} />
-            )}
+            )} */}
           </Link>
         </Typography>
         <Button

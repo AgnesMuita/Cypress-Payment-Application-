@@ -9,6 +9,7 @@ import {
   FormControlLabel,
   Checkbox,
   Grid,
+  Paper,
   Box,
   Typography,
   makeStyles,
@@ -20,6 +21,8 @@ import { string, object } from "yup";
 import RWALogo from "./SvgRwaLogo";
 import Footer from "./Footer";
 import { SignInPayload } from "../models";
+import "../styles/styles.css";
+
 import { AuthMachineContext, AuthMachineEvents } from "../machines/authMachine";
 import { Alert } from "@material-ui/lab";
 
@@ -46,10 +49,10 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: "orange",
+    backgroundColor: "white",
   },
   signin: {
-    color: "teal",
+    color: "white",
   },
   alertMessage: {
     marginBottom: theme.spacing(2),
@@ -72,7 +75,7 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
   const signInPending = (payload: SignInPayload) => sendAuth({ type: "LOGIN", ...payload });
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" className="maincomponent">
       <CssBaseline />
       <div className={classes.paper}>
         {authState.context?.message && (
@@ -80,9 +83,6 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
             {authState.context.message}
           </Alert>
         )}
-        <div>
-          <RWALogo className={classes.logo} />
-        </div>
         <Typography component="h1" variant="h5" className={classes.signin}>
           Sign in
         </Typography>
@@ -100,7 +100,6 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
               <Field name="username">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="normal"
                     fullWidth
                     id="username"
@@ -117,7 +116,6 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
               <Field name="password">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="normal"
                     fullWidth
                     label="Password"

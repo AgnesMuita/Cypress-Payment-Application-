@@ -23,6 +23,7 @@ if (window.Cypress) {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    backgroundColor: "#F38701",
   },
 }));
 

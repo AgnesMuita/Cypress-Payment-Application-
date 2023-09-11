@@ -34,7 +34,7 @@ const validationSchema = object({
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(5),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -44,12 +44,15 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(0.5),
+  },
+  textfield: {
+    color: "white",
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: "teal",
-    color: "white",
+    backgroundColor: "white",
+    color: "black",
   },
 }));
 
@@ -71,12 +74,9 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
   const signUpPending = (payload: SignUpPayload) => sendAuth({ type: "SIGNUP", ...payload });
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" className="maincomponents">
       <CssBaseline />
       <div className={classes.paper}>
-        <div>
-          <RWALogo className={classes.logo} />
-        </div>
         <Typography component="h1" variant="h5" data-test="signup-title">
           Sign Up
         </Typography>
@@ -94,7 +94,6 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
               <Field name="firstName">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="normal"
                     required
                     fullWidth
@@ -112,7 +111,6 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
               <Field name="lastName">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="normal"
                     required
                     fullWidth
@@ -129,7 +127,6 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
               <Field name="username">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="normal"
                     required
                     fullWidth
@@ -137,6 +134,7 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
                     label="Username"
                     type="text"
                     data-test="signup-username"
+                    className={classes.textfield}
                     error={(touched || value !== initialValue) && Boolean(error)}
                     helperText={touched || value !== initialValue ? error : ""}
                     {...field}
@@ -146,7 +144,6 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
               <Field name="password">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="normal"
                     required
                     fullWidth
@@ -163,7 +160,6 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
               <Field name="confirmPassword">
                 {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
                   <TextField
-                    variant="outlined"
                     margin="normal"
                     required
                     fullWidth
@@ -196,7 +192,7 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
           )}
         </Formik>
       </div>
-      <Box mt={8}>
+      <Box mt={2}>
         <Footer />
       </Box>
     </Container>

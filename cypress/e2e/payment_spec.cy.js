@@ -44,7 +44,6 @@ describe('payment', ()=>{
       const convertedOldBalance=parseFloat(initialBalance.replace(/\$|,/g,""))
       const convertedNewBalance=parseFloat($balance.text().replace(/\$|,/g,""))
       expect(convertedOldBalance-convertedNewBalance).to.equal(parseFloat(paymentAmount))
-
     })
 
   })
