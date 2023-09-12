@@ -1,15 +1,15 @@
 {
-  "name": "payment application by C Hash",
+  "name": "payment-application-by-c-hash",
   "version": "1.0.0",
   "description": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/AgnesMuita/payments-application"
   },
-  "author": "Cypress DX Team",
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AgnesMuita/payments-application/issues"  
+    "url": "https://github.com/AgnesMuita/payments-application/issues"
   },
   "engines": {
     "node": ">=12"
